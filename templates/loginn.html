@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block body %}
+ <main>
+
+      <div class="container d-flex justify-content-center my-5">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Student Panel</h5>
+            <p class="card-text">Please login with your student username</p>
+            <a href="/studentlogin" class="btn btn-dark">Click here</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container d-flex justify-content-center my-5">
+
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Company Panel</h5>
+            <p class="card-text">Please login with your company username</p>
+            <a href="/companylogin" class="btn btn-dark">Click here</a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+{% endblock body %}

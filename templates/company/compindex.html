@@ -1,0 +1,105 @@
+{% extends 'company/compbase.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+
+<main>
+        <div class="container p-3 mb-2 bg-light bg-gradient text-dark">
+            <h2>Company Details:</h2>
+            <br>
+            <div class="container">
+                <div class="row my-2">
+                  <div class="col">
+                    <b>Company's name: </b>
+                  </div>
+                  <div class="col">
+                  {{comp.companyname}}
+                  </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col">
+                        <b>Minimum Percentage Required: </b>
+                    </div>
+                    <div class="col">
+                     {{comp.minpercentage}} %
+                    </div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col">
+                        <b>Branch Required: </b>
+                    </div>
+                    <div class="col">
+                    {{comp.branch}}
+                    </div>
+                  </div>     
+                  <div class="row my-2">
+                    <div class="col">
+                        <b>Min Semester: </b>
+                    </div>
+                    <div class="col">
+                    {{comp.minsemester}}
+                    </div>
+                  </div>   
+                  <div class="row my-2">
+                    <div class="col">
+                        <b>Interview Date: </b>
+                    </div>
+                    <div class="col">
+                    {{comp.interviewdate}}
+                    </div>
+                  </div>   
+                  <div class="row my-2">
+                    <div class="col">
+                        <b>Interview Time: </b>
+                    </div>
+                    <div class="col">
+                    {{comp.interviewtime}}
+                    </div>
+                  </div> 
+              </div>
+        </div>
+
+        <div class="container p-3 mb-2 bg-light bg-gradient text-dark">
+        
+          <h3>Company Requirement Form:</h3>
+          <br>
+          <form action="/compreq" method="POST">
+          {% csrf_token %}
+            <div class="row mb-3">
+              <label for="minpercentage" class="col-sm-2 col-form-label">Minimum Percentage Required:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="minpercentage" name="minpercentage">
+              </div>
+            </div>
+            
+            <div class="row mb-3">
+              <label for="branch" class="col-sm-2 col-form-label">Branch:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="branch" name="branch">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="minsemester" class="col-sm-2 col-form-label">Min Semester:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="minsemester" name="minsemester">
+              </div>
+            </div><div class="row mb-3">
+              <label for="interviewdate" class="col-sm-2 col-form-label">Interview Date:</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" id="interviewdate" name="interviewdate">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="interviewtime" class="col-sm-2 col-form-label">Interview Time:</label>
+              <div class="col-sm-10">
+                <input type="time" class="form-control" id="interviewtime" name="interviewtime">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+          </form>        
+        </div>
+        
+    </main>
+
+{% endblock body %}

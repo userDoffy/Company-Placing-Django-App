@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}Student Registration{% endblock title %}
+
+{% block body %}
+
+{% if messages %}
+
+{% for message in messages %}
+
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0 py-3" role="alert">
+  <strong>{{ message }}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endfor %}
+
+{% endif %}
+
+ <main>
+        <div class="container my-2">
+            <h3>Please fill up student registration form</h3>
+            <br>
+            <form action="/studentreg" method="POST">
+            {% csrf_token %}
+                <div class="row mb-3">
+                  <label for="username" class="col-sm-2 col-form-label">Username</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="username" id="username">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="password" class="col-sm-2 col-form-label">Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" name="password" id="password">
+                  </div>
+                </div>
+           
+            <hr>
+
+            <h4>These details will be used as your cv</h4>
+
+                <div class="row mb-3">
+                  <label for="studentname" class="col-sm-2 col-form-label">Student's Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="studentname" id="studentname">
+                  </div>
+                </div>
+
+
+                  <div class="row mb-3">
+                    <label for="email" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" name="email" id="email">
+                    </div>
+                  </div>
+
+                  
+                  <div class="row mb-3">
+                    <label for="branch" class="col-sm-2 col-form-label">Branch</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="branch" name="branch">
+                    </div>
+                  </div>
+
+                  
+
+                  <div class="row mb-3">
+                    <label for="semester" class="col-sm-2 col-form-label">Semester</label>
+                    <div class="col-sm-10">
+                      <input type="number" class="form-control" name="semester" id="semester">
+                    </div>
+                  </div>
+                  
+                 
+
+                  <div class="row g-3 mb-3">
+                    <label for="classtwelve" class="col-sm-2 col-form-label">Result(%)</label>
+                    <div class="col-sm-4">
+                      <input type="number" max="100" min="0" step="0.01" class="form-control" name="percentage" id="percentage">
+                    </div>
+                    
+                  </div>
+                  
+                  <input class="btn btn-dark" type="submit" value="Submit">
+                  <input class="btn btn-dark" type="reset" value="Reset">
+              </form>
+             
+
+        </div>
+    </main>
+
+{% endblock body %}

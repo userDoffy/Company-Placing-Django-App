@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Company Registration{% endblock title %}
+
+{% block body %}
+
+{% if messages %}
+
+{% for message in messages %}
+
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0 py-3" role="alert">
+  <strong>{{ message }}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endfor %}
+
+{% endif %}
+
+<main>
+        <div class="container">
+          <h2>Register Company</h2>
+          <br>
+            <form action="/companyreg" method="POST">
+            {% csrf_token %}
+                <div class="row mb-3">
+                  <label for="companyname" class="col-sm-2 col-form-label">Company Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="companyname" name="companyname">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="companyid" class="col-sm-2 col-form-label">Company Login Id</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="companyid" name="companyid">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="password" class="col-sm-2 col-form-label">Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" name="password">
+                  </div>
+                </div>
+
+                <input class="btn btn-dark" type="submit" value="Submit">
+                <input class="btn btn-dark" type="reset" value="Reset">
+              </form>
+
+        </div>
+
+{% endblock body %}

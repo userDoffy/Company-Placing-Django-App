@@ -1,0 +1,39 @@
+{% extends 'student/studbase.html' %}
+
+{% block title %}Companies{% endblock title %}
+
+{% block body %}
+
+<main>
+        <div class="container">
+            <br>
+
+            <h3>Shortlisting Companies</h3>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Company Name</th>
+                    <th scope="col">Branch</th>
+                    <th scope="col">Minimum Semester</th>
+                    <th scope="col">Minimum Percentage</th>
+                    <th scope="col">Interview Date</th>
+                    <th scope="col">Interview Time</th>
+                  </tr>
+                </thead>
+                    {% for comp in compset %}
+                    <tbody>
+                        <tr>
+                        <th scope='row'>{{comp.companyname}}</th>
+                            <td>{{comp.branch}}</td>
+                            <td>{{comp.minsemester}}</td>
+                            <td>{{comp.minpercentage}}</td>
+                            <td>{{comp.interviewdate}}</td>
+                            <td>{{comp.interviewtime}}</td> 
+                        </tr>  
+                    </tbody>
+                    {% endfor %}
+                  
+              </table>
+    </main>
+
+{% endblock body %}

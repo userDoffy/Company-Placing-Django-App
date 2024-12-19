@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+<main class="container-fluid">
+  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">WELCOME</h1>
+      <p class="lead my-3">Welcome to the team! We are thrilled to have you at our office. You're going to be a valuable asset to our company, and we can't wait to see all that you accomplish. The entire team is thrilled to welcome you on board. ... A warm welcome and lots of good wishes on becoming part of our growing team.</p>
+      
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">Our Goal</h3>
+          <div class="mb-1 text-muted">Nov 12</div>
+          <p class="card-text mb-auto">The ultimate goal of this institue is to extend it's learning and training programmers to it's precious students throughout the country through both online and offline medium. We strive to provide the students with most novel and revelant education possible.</p>
+          
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          {% load static %}
+          <img src="{% static 'building.jpg' %}" class="bd-placeholder-img" width="200" height="250"  role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"></rect></img>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          
+          <h3 class="mb-0">Our Purpose</h3>
+          <div class="mb-1 text-muted">Nov 11</div>
+          <p class="mb-auto">We provide the best learning facilities across the country. Our training programmes will allow the students to hone their skills to the best and get a entry level placements in top companies of the country and the upcoming future.That have been our sole purpose for last 20 years.</p>
+          
+        </div>
+        <div class="col-auto d-none d-lg-block">
+        <img src="{% static 'disscuss.jpg' %}" class="bd-placeholder-img" width="200" height="250"  role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"></rect></img>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">Industrial Exposure</h3>
+          <div class="mb-1 text-muted">Nov 12</div>
+          <p class="card-text mb-auto">Our students are frequently exposed to the latest industrial practices through several industrial visits during their trainig campaign.The students also undergo industrial training for six weeks as per our academic curriculum before they get their certificates and placements.  </p>
+          
+        </div>
+        <div class="col-auto d-none d-lg-block">
+        <img src="{% static 'library.jpg' %}" class="bd-placeholder-img" width="200" height="250"  role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"></rect></img>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          
+          <h3 class="mb-0">Training Platform</h3>
+          <div class="mb-1 text-muted">Nov 11</div>
+          <p class="mb-auto">We have the biggest training platform in the country for the students so that they can hone their skills through lectures, practicals, industrial visits and placement campaign so that they can be useful in their upcoming future. Our certificate is priortized across asia so students can also refer abroad easily.</p>
+          
+        </div>
+        <div class="col-auto d-none d-lg-block">
+        <img src="{% static 'class.jpg' %}" class="bd-placeholder-img" width="200" height="250"  role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"></rect></img>
+
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock body %}

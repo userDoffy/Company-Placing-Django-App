@@ -1,0 +1,24 @@
+{% extends 'student/studbase.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+<main>
+        <br>
+        <div class="container">
+            <h2>Welcome</h2>
+        </div>
+        <div class="container p-3 mb-2 bg-light bg-gradient text-dark">
+            <br>
+            <h4>Updates:</h4>
+            <p style="font-size:22px">Hello {{studset.studentname}}</p>
+            {% if rec == 0 %}
+            <h5 style='color:red'>Sorry! You haven't been recruited so far.</h5>
+            {% else %}
+            <h5 style='color:green'>Congratulations! You have been recruited by {{studset.recruited}}</h5>
+            {% endif %}
+              
+        </div>
+    </main>
+
+{% endblock body %}

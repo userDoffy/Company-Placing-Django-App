@@ -1,0 +1,48 @@
+{% extends 'company/compbase.html' %}
+
+{% block title %}Recruited Students{% endblock title %}
+
+{% block body %}
+
+<main>
+        <div class="container">
+            <br>
+            <h3>Recruited Students</h3>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Students' Name</th>
+                    <th scope="col">Branch</th>
+                    <th scope="col">Semester</th>
+                    <th scope="col">Percentage</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+
+                {% for stud in studset %}
+                <tbody>
+                    <tr>
+                        <th scope='row'>{{stud.studentname}}</th>
+                        <td>{{stud.branch}}</td>
+                        <td>{{stud.semester}}</td>
+                        <td>{{stud.percentage}}</td>
+                        <td>
+                            <form action='/recruitedstudents' method='POST'>
+                            {% csrf_token %}
+                            <input type='text' style='display:none;' name='username' id='username' value='{{stud.username}}'/>
+                            <button class='btn btn-sm btn-outline-dark' type='submit'
+                            name='recruit' value='recruit'>Remove</button>
+                            </form>
+                        
+                        </td>
+                    </tr> 
+                </tbody>
+                {% endfor %}
+               
+          
+              </table>
+        </div>
+    </main>
+
+
+{% endblock body %}
